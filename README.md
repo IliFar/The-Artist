@@ -11,8 +11,8 @@
 
 ## TODO - Kvar att göra
 
-*Vad har du inte hunnit med i denna uppgift?*
+Jag tror jag har gjort allt som står i kravspecifikationen.
 
 ## Förtydliganden/motivering
 
-*Finns det något extra du vill förtydliga med din lösning? Både bra och mindre bra*
+Jag vill säga att jag använder Web Compiler för att kompilera min SASS fil.
