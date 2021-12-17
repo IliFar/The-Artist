@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Contact>
+@{
+  ViewBag.Title = "Contact Us";
+}
+
+<div>
+    @foreach (var contact in Model)
+   {
+       <h3>Email : @contact.Email</h3>
+       <h3>Phone Number : @contact.PhoneNumber</h3>
+   }
+</div>

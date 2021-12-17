@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Art>
+
+
+@*@section Styles {
+    <link rel="stylesheet" href="/content/StyleSheet.scss)">
+}*@
+
+
+
+    @foreach (var art in Model)
+    {
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" height="200" src="@art.Image" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@art.Title</h5>
+                        <p class="card-text">@art.Description</p>
+                        <p class="card-text">@art.Price.ToString("c")</p>
+                        <a href="#" class="btn btn-primary">Add To Cart</a>
+                    </div>
+                </div>
+            
+    }
+
+    
