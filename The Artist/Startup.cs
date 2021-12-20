@@ -22,6 +22,7 @@ namespace The_Artist
             services.AddScoped<IArtRepository<Art>, ArtRepository>();
             services.AddScoped<IContactRepository<Contact>, ContactRepository>();
             services.AddScoped<IHomeRepository, HomeRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

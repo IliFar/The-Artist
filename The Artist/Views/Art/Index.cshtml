@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Art>
+﻿@model ArtListViewModel
 
 
 @*@section Styles {
@@ -6,8 +6,8 @@
 }*@
 
 
-
-    @foreach (var art in Model)
+    <h1>@Model.CurrentCategory</h1>
+    @foreach (var art in Model.Arts)
     {
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" height="200" src="@art.Image" alt="Card image cap">
