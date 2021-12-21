@@ -2,11 +2,11 @@
 
 namespace The_Artist.Models.repositories
 {
-    public class ContactRepository : IContactRepository<Contact>
+    public class MockContactRepository : IContactRepository<Contact>
     {
         List<Contact> Contacts;
         
-        public ContactRepository()
+        public MockContactRepository()
         {
             Contacts = new List<Contact>()
             {

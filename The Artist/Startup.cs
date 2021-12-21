@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -9,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using The_Artist.Models;
 using The_Artist.Models.repositories;
+using The_Artist.Models.repositories.art;
+using The_Artist.Models.repositories.category;
 
 namespace The_Artist
 {
@@ -18,10 +21,14 @@ namespace The_Artist
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseInMemoryDatabase("arts")
+            );
+
             services.AddMvc();
             services.AddScoped<IArtRepository<Art>, ArtRepository>();
-            services.AddScoped<IContactRepository<Contact>, ContactRepository>();
-            services.AddScoped<IHomeRepository, HomeRepository>();
+            services.AddScoped<IContactRepository<Contact>, MockContactRepository>();
+            services.AddScoped<IHomeRepository, MockHomeRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
         }
 

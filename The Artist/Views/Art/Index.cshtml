@@ -6,11 +6,12 @@
 }*@
 
 
-    <h1>@Model.CurrentCategory</h1>
     @foreach (var art in Model.Arts)
     {
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" height="200" src="@art.Image" alt="Card image cap">
+                    <img class="card-img-top" src="@art.Image" alt="Card image cap">
+                    <p class="card-text">Category: @Model.CurrentCategory</p>
+
                     <div class="card-body">
                         <h5 class="card-title">@art.Title</h5>
                         <p class="card-text">@art.Description</p>

@@ -1,9 +1,9 @@
 ﻿body {
   background-color: lightblue;
 }
-body .thumbnail img {
-  width: 400px;
-}
 body .card {
   margin: 10px;
+}
+body .card img {
+  height: 300px;
 }
