@@ -21,8 +21,17 @@
                         <li class="nav-item">
                             <a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Art" asp-action="Index">Art</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Art</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-controller="Art" asp-action="Index">All</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-controller="Art" asp-action="Category" asp-route-id="1">Chairs</a></li>
+                                <li><a class="dropdown-item" asp-controller="Art" asp-action="Category" asp-route-id="2">Hammers</a></li>
+                                <li><a class="dropdown-item" asp-controller="Art" asp-action="Category" asp-route-id="3">Knives</a></li>
+                                <li><a class="dropdown-item" asp-controller="Art" asp-action="Category" asp-route-id="4">Lamps</a></li>
+                                <li><a class="dropdown-item" asp-controller="Art" asp-action="Category" asp-route-id="5">Boats</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
@@ -32,8 +41,9 @@
             </div>
         </nav>
     </header>
-     <main class="d-flex flex-row justify-content-center align-items-center py-5">
+     <main class="d-sm-flex flex-wrap flex-row justify-content-center align-items-center py-2">
          @RenderBody();
      </main>
+     <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

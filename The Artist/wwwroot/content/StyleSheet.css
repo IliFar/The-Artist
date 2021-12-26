@@ -7,3 +7,6 @@ body .card {
 body .card img {
   height: 300px;
 }
+body .card .price {
+  font-weight: bold;
+}

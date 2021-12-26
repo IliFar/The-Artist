@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace The_Artist.Models.repositories
 {
@@ -13,6 +14,10 @@ namespace The_Artist.Models.repositories
                 new Category { CategoryId = 4,CategoryName = "Lamps", Description ="All The Power Chairs"},
                 new Category { CategoryId = 5,CategoryName = "Boats", Description ="All The Power Chairs"},
             };
-        
+
+        public Category GetCategory(int id)
+        {
+            return GetAllCategories.FirstOrDefault(c => c.CategoryId == id);
+        }
     }
 }

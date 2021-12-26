@@ -8,20 +8,23 @@ namespace The_Artist.Controllers
     public class ArtController : Controller
     {
         private readonly IArtRepository<Art> artRepository;
-        private readonly ICategoryRepository categoryRepository;
+        private readonly ArtListViewModel artListViewModel;
 
-        public ArtController(IArtRepository<Art> artRepository, ICategoryRepository categoryRepository)
+        public ArtController(IArtRepository<Art> artRepository)
         {
             this.artRepository = artRepository;
-            this.categoryRepository = categoryRepository;
+            artListViewModel = new ArtListViewModel();
         }
 
         public IActionResult Index()
         {
-            ArtListViewModel artListViewModel = new ArtListViewModel();
             artListViewModel.Arts = artRepository.List();
 
-            artListViewModel.CurrentCategory = "CheeseCake";
+            return View(artListViewModel);
+        }
+        public IActionResult Category(int id)
+        {
+            artListViewModel.Arts = artRepository.GetArtByCategoryId(id);
 
             return View(artListViewModel);
         }

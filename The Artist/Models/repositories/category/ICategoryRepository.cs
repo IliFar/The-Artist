@@ -4,5 +4,6 @@ namespace The_Artist.Models.repositories
     public interface ICategoryRepository
     {
         IEnumerable<Category> GetAllCategories { get; }
+        Category GetCategory(int id);
     }
 }

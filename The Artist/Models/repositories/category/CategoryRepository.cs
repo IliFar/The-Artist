@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace The_Artist.Models.repositories.category
 {
@@ -12,5 +13,10 @@ namespace The_Artist.Models.repositories.category
         }
 
         public IEnumerable<Category> GetAllCategories => appDbContext.Categories;
+
+        public Category GetCategory(int id)
+        {
+            return appDbContext.Categories.FirstOrDefault(c => c.CategoryId == id);
+        }
     }
 }
