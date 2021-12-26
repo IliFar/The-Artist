@@ -2,10 +2,10 @@
 
 namespace The_Artist.Models
 {
-    public class HomeRepository : IHomeRepository
+    public class MockHomeRepository : IHomeRepository
     {
         Home home;
-        public HomeRepository()
+        public MockHomeRepository()
         {
             home = new Home()
             {
